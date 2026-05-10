@@ -77,7 +77,6 @@
 }
 
 .card {
-  inline-size: inherit;
   display: flex;
   flex-direction: column;
   min-block-size: 300px;
@@ -109,7 +108,7 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
-  border: 2px solid var(--accent-color, #000000);
+  border-block-end: 2px solid var(--accent-color, #000000);
 }
 
 .img__content {
