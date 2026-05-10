@@ -134,6 +134,7 @@ button:focus-visible {
 .card__like-button,
 .ok-button {
   isolation: isolate;
+  transition: box-shadow 0.3s ease;
 }
 
 .save-button .button__text,
@@ -155,18 +156,8 @@ button:focus-visible {
   mix-blend-mode: difference;
 }
 
-.save-button,
-.card__like-button,
-.ok-button {
-  transition: box-shadow 0.3s ease;
-}
-
 .card__like-button .button__text {
   transition: none;
-}
-
-.card__icon-button {
-  transition: box-shadow 0.3s ease;
 }
 
 button::before {
