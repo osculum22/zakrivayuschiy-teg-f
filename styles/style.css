@@ -206,15 +206,6 @@ dialog .floppy__content {
   margin-bottom: var(--inset-big, 30px);
 }
 
-.floppy__text {
-  font-family: var(--accent-font), monospace;
-  font-size: var(--font-size-s, 14px);
-  font-weight: 400;
-  line-height: 1.5;
-  text-transform: uppercase;
-  margin: 0;
-}
-
 dialog:focus {
   outline: none;
 }
