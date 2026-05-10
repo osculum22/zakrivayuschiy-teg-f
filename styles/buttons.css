@@ -1,0 +1,187 @@
+/**В этом файле я решил сделать стили только для кнопок, так как в какой-то момент их стало слишком много в общем файле стилей**/
+
+/*ОБЩИЕ СТИЛИ ДЛЯ КНОПОК*/
+
+button {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--box-background, #ffffff);
+  z-index: 1;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color, #000000);
+}
+
+/*КНОПКИ В КАРТОЧКАХ*/
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--button-gap, 6px);
+  margin-top: auto;
+  padding-inline: var(--margin-l, 25px);
+}
+
+.card__like-button {
+  width: var(--button-width, 130px);
+  height: var(--button-height, 38px);
+  background: var(--box-background, #ffffff);
+  border: 2px solid var(--accent-color, #000000);
+  cursor: pointer;
+  font-family: var(--accent-font), monospace;
+  font-size: var(--font-size-s, 14px);
+  transition: 0.3s ease;
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  width: var(--icon-w, 33px);
+  height: var(--icon-h, 33px);
+}
+
+.card__icon-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.card__icon-button::before {
+  display: none;
+  content: none;
+}
+
+.button__text {
+  display: inline-block;
+}
+
+/*СОХРАНИТЬ НА ПАМЯТЬ*/
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-block: 50px 100px;
+  padding: 12px 20px;
+  border: 2px solid var(--accent-color, #000000);
+  font-family: var(--accent-font), monospace;
+  font-size: var(--font-size-s, 14px);
+  line-height: 1;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width = 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+}
+
+.save-button__icon {
+  width: var(--save-button-w, 21px);
+  height: var(--save-button-w, 21px);
+  color: var(--accent-color, #000000);
+  flex-shrink: 0;
+}
+
+/*КОНОПКИ В ДИАЛОГОВОМ ОКНЕ*/
+/* Иконка дискеты */
+.ok-button__icon {
+  width: var(--ok-button-w, 39px);
+  height: var(--ok-button-w, 39px);
+  flex-shrink: 0;
+  color: var(--accent-color, #000000);
+}
+
+.ok-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--box-background, #ffffff);
+  border: 2px solid var(--accent-color, #000000);
+  font-family: var(--accent-font), monospace;
+  font-size: var(--font-size-s, 14px);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.ok-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color, #000000);
+}
+
+/*СТИЛИ ДЛЯ МИКС БЛЕНД*/
+.save-button,
+.card__like-button,
+.ok-button {
+  isolation: isolate;
+}
+
+.save-button .button__text,
+.save-button .save-button__icon,
+.card__like-button .button__text,
+.ok-button .button__text {
+  position: relative;
+  z-index: 2;
+  color: var(--text-stroke-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+.save-button .save-button__icon {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  color: var(--text-stroke-color, #ffffff);
+  fill: var(--text-stroke-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+.save-button,
+.card__like-button,
+.ok-button {
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button .button__text {
+  transition: none;
+}
+
+.card__icon-button {
+  transition: box-shadow 0.3s ease;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--box-bg-invers, #000000);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: translateX(0);
+}

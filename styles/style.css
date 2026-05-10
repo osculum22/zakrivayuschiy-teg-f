@@ -13,4 +13,227 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--text-card-weight);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: normal;
+  min-height: 100vh;
+}
+
+.container {
+  inline-size: var(--container-width);
+  margin-inline: auto;
+  background-color: var(--box-background, #ffffff);
+  border: 2px solid var(--accent-color, #000000);
+  box-sizing: border-box;
+}
+
+.header {
+  margin-block: 100px;
+  background-color: var(--box-background, #ffffff);
+  container-type: inline-size;
+}
+
+.text__pixel {
+  font-family: var(--accent-font), sans-serif;
+}
+
+/*ЛОГОТИП*/
+.logo__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--margin-m, 20px);
+  margin-inline: var(--header-inline-inset);
+  margin-block: var(--header-block-inset);
+}
+
+.logo {
+  font-size: var(--header-logo-size);
+  text-transform: uppercase;
+}
+
+.logo__text {
+  font-size: var(--header-text-size);
+  text-transform: uppercase;
+}
+
+@container (inline-size < 375px) {
+  .logo {
+    font-size: clamp(33px, 14cqi, 49px);
+  }
+}
+
+/*ОСНОВНОЕ СОДЕРЖИМОЕ*/
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  max-inline-size: 100%;
+}
+
+.card {
+  inline-size: inherit;
+  display: flex;
+  flex-direction: column;
+  min-block-size: 300px;
+}
+
+.card > :not(:first-child) {
+  margin-bottom: var(--margin-l, 25px);
+}
+
+.heading {
+  font-family: var(--main-font), sans-serif;
+  font-size: var(--font-size-main, 18px);
+  font-variation-settings: "wght" var(--tittle-card-weight);
+  font-style: normal;
+  margin-inline: var(--margin-s, 10px);
+}
+
+.text {
+  font-family: var(--main-font), sans-serif;
+  font-size: var(--font-size-main, 18px);
+  font-variation-settings: "wght" var(--text-card-weight);
+  margin-inline: var(--margin-l, 25px);
+}
+
+.picture {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--accent-color, #000000);
+}
+
+.img__content {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 5;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  font-family: var(--accent-font), monospace;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--lable-text-color, #000000);
+  text-shadow:
+    -1px -1px 0 var(--text-stroke-color, #ffffff),
+    1px -1px 0 var(--text-stroke-color, #ffffff),
+    -1px 1px 0 var(--text-stroke-color, #ffffff),
+    1px 1px 0 var(--text-stroke-color, #ffffff);
+}
+
+/*ФИЛЬТРЫ*/
+.way {
+  filter: sepia(0.3) brightness(0.8) contrast(2.9);
+}
+.mountain {
+  filter: invert(0.2) hue-rotate(30deg);
+}
+.salut {
+  filter: sepia(0.5) brightness(1.2) saturate(1.3);
+}
+.friends {
+  filter: blur(2px) saturate(1.3);
+}
+.job {
+  filter: saturate(2.5) brightness(1.1) contrast(1.2);
+}
+.board {
+  filter: blur(1px) sepia(0.5) contrast(1.3) brightness(0.95);
+}
+.sad {
+  filter: contrast(1.5) brightness(0.9) saturate(1.8);
+}
+.dog {
+  filter: sepia(0.6) contrast(1.2) brightness(0.9) saturate(1.1) blur(0.5px);
+}
+
+@supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
+  .label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color, #ffffff);
+    text-stroke: 1px var(--text-stroke-color, #ffffff);
+  }
+}
+
+/*ПОДВАЛ*/
+.footer {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+/*ДИАЛОГОВОЕ ОКНО*/
+dialog {
+  padding: var(--inset-big, 30px);
+  border: 2px solid var(--accent-color, #000000);
+  background-color: var(--box-background, #ffffff);
+  max-width: 353px;
+  width: var(--dialog-width);
+  min-height: 191px;
+}
+
+dialog .floppy__content {
+  display: flex;
+  align-items: center;
+  gap: var(--margin-m, 20px);
+  margin-bottom: var(--inset-big, 30px);
+}
+
+.floppy__text {
+  font-family: var(--accent-font), monospace;
+  font-size: var(--font-size-s, 14px);
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+dialog:focus {
+  outline: none;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.floppy__text {
+  font-family: var(--accent-font), monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--font-size-s, 14px);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.floppy__box {
+  margin-inline: auto;
+  inline-size: var(--floppy-inline-size);
+  min-block-size: 191px;
 }
