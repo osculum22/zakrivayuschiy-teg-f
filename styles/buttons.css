@@ -50,7 +50,6 @@ button:focus-visible {
   width: var(--icon-w, 38px);
   height: var(--icon-h, 38px);
   border: 2px solid transparent;
-  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
