@@ -22,9 +22,8 @@
     ),
     linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
   --container-width: clamp(280px, 100vw, 700px);
-  --header-height: clamp(327px, calc(300px + 4.44vw), 368px);
   --header-logo-size: clamp(49px, 6vw, 65px);
-  --header-text-size: clamp(14px, 4vw, 23px);
+  --header-text-size: clamp(14px, 1vw, 23px);
   --header-block-inset: clamp(122px, 20%, 130px);
   --header-inline-inset: clamp(16px, 2vw, 492.5px);
   --floppy-inline-size: clamp(341px, 50vw, 353px);
@@ -44,6 +43,7 @@
   --font-size-main: 18px;
   --font-size-s: 14px;
 
+  --margin-xs: 5px;
   --margin-s: 10px;
   --margin-m: 20px;
   --margin-l: 25px;
@@ -53,12 +53,15 @@
   --button-width: 130px;
   --button-height: 38px;
 
-  --ok-button-w: 39px;
-  --ok-button-h: 39px;
-
   --save-button-w: 21px;
   --save-button-h: 21px;
 
-  --icon-w: 33px;
-  --icon-h: 33px;
+  --icon-w: 38px;
+  --icon-h: 38px;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --header-text-size: clamp(14px, 2vw, 23px);
+  }
 }

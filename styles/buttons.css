@@ -5,9 +5,13 @@
 button {
   position: relative;
   overflow: hidden;
-  background-color: var(--box-background, #ffffff);
   z-index: 1;
+  transition: box-shadow 0.3s ease;
+  font-size: var(--font-size-s, 14px);
+  font-family: var(--accent-font), monospace;
+  border: 2px solid var(--accent-color, #000000);
   cursor: pointer;
+  background: var(--box-background, #ffffff);
 }
 
 button:focus {
@@ -33,12 +37,6 @@ button:focus-visible {
 .card__like-button {
   width: var(--button-width, 130px);
   height: var(--button-height, 38px);
-  background: var(--box-background, #ffffff);
-  border: 2px solid var(--accent-color, #000000);
-  cursor: pointer;
-  font-family: var(--accent-font), monospace;
-  font-size: var(--font-size-s, 14px);
-  transition: 0.3s ease;
 }
 
 .card__icon-button {
@@ -47,21 +45,23 @@ button:focus-visible {
   justify-content: center;
   padding: 0;
   background: transparent;
-  border: none;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  width: var(--icon-w, 33px);
-  height: var(--icon-h, 33px);
+  transition: border 0.3s ease;
+  width: var(--icon-w, 38px);
+  height: var(--icon-h, 38px);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
   outline: none;
-  box-shadow: none;
+  border-color: transparent;
 }
 
 .card__icon-button:focus-visible {
+  box-shadow: none;
   outline: none;
-  box-shadow: 0 0 0 2px var(--accent-color);
+  border-color: var(--accent-color, #000000);
 }
 
 .card__icon-button::before {
@@ -76,17 +76,11 @@ button:focus-visible {
 /*СОХРАНИТЬ НА ПАМЯТЬ*/
 .save-button {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-block: 50px 100px;
-  padding: 12px 20px;
-  border: 2px solid var(--accent-color, #000000);
-  font-family: var(--accent-font), monospace;
-  font-size: var(--font-size-s, 14px);
-  line-height: 1;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  gap: 10px;
+  padding: 15px 20px;
 }
 
 @media (max-width = 375px) {
@@ -105,8 +99,8 @@ button:focus-visible {
 /*КОНОПКИ В ДИАЛОГОВОМ ОКНЕ*/
 /* Иконка дискеты */
 .ok-button__icon {
-  width: var(--ok-button-w, 39px);
-  height: var(--ok-button-w, 39px);
+  width: var(--icon-w, 38px);
+  height: var(--icon-h, 38px);
   flex-shrink: 0;
   color: var(--accent-color, #000000);
 }
@@ -114,19 +108,8 @@ button:focus-visible {
 .ok-button {
   width: 100%;
   padding: 12px;
-  background: var(--box-background, #ffffff);
-  border: 2px solid var(--accent-color, #000000);
-  font-family: var(--accent-font), monospace;
-  font-size: var(--font-size-s, 14px);
   text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.3s ease;
   text-align: center;
-}
-
-.ok-button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0 0 var(--accent-color, #000000);
 }
 
 /*СТИЛИ ДЛЯ МИКС БЛЕНД*/
@@ -148,16 +131,23 @@ button:focus-visible {
 }
 
 .save-button .save-button__icon {
-  width: 21px;
-  height: 21px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   color: var(--text-stroke-color, #ffffff);
   fill: var(--text-stroke-color, #ffffff);
   mix-blend-mode: difference;
 }
 
-.card__like-button .button__text {
-  transition: none;
+@media (min-width: 1440px) {
+  .save-button {
+    flex-direction: row;
+    gap: 10px;
+    padding: 11px 18px;
+}
+  .save-button .save-button__icon {
+    width: 21px;
+}
 }
 
 button::before {

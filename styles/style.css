@@ -32,13 +32,13 @@
 }
 
 .header {
-  margin-block: 100px;
+  margin-block: 98px;
   background-color: var(--box-background, #ffffff);
   container-type: inline-size;
 }
 
 .text__pixel {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), 'fantasy';
 }
 
 /*ЛОГОТИП*/
@@ -92,6 +92,7 @@
   font-variation-settings: "wght" var(--tittle-card-weight);
   font-style: normal;
   margin-inline: var(--margin-s, 10px);
+  margin-block: var(--margin-xs, 5px);
 }
 
 .text {
@@ -125,7 +126,7 @@
   z-index: 5;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font), monospace;
+  font-family: var(--accent-font), 'fantasy';
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -138,28 +139,28 @@
 }
 
 /*ФИЛЬТРЫ*/
-.way {
+.contrast {
   filter: sepia(0.3) brightness(0.8) contrast(2.9);
 }
-.mountain {
-  filter: invert(0.2) hue-rotate(30deg);
+.hue-rotate {
+  filter: hue-rotate(30deg) contrast(0.5);
 }
-.salut {
+.sepia {
   filter: sepia(0.5) brightness(1.2) saturate(1.3);
 }
-.friends {
+.blur {
   filter: blur(2px) saturate(1.3);
 }
-.job {
+.saturate {
   filter: saturate(2.5) brightness(1.1) contrast(1.2);
 }
-.board {
+.brightness {
   filter: blur(1px) sepia(0.5) contrast(1.3) brightness(0.95);
 }
-.sad {
-  filter: contrast(1.5) brightness(0.9) saturate(1.8);
+.invert {
+  filter: invert(1) contrast(1.5) brightness(0.9) saturate(0.8);
 }
-.dog {
+.mix-filter {
   filter: sepia(0.6) contrast(1.2) brightness(0.9) saturate(1.1) blur(0.5px);
 }
 
@@ -195,7 +196,6 @@ dialog {
   background-color: var(--box-background, #ffffff);
   max-width: 353px;
   width: var(--dialog-width);
-  min-height: 191px;
 }
 
 dialog .floppy__content {
@@ -214,7 +214,7 @@ dialog::backdrop {
 }
 
 .floppy__text {
-  font-family: var(--accent-font), monospace;
+  font-family: var(--accent-font), 'fantasy';
   font-weight: 400;
   font-style: normal;
   font-size: var(--font-size-s, 14px);
@@ -225,5 +225,5 @@ dialog::backdrop {
 .floppy__box {
   margin-inline: auto;
   inline-size: var(--floppy-inline-size);
-  min-block-size: 191px;
 }
+

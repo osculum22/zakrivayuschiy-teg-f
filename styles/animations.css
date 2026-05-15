@@ -35,12 +35,12 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in 0.1s forwards;
+  animation: heart-scale 0.3s ease-in 0.1s;
   transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-opacity 0.3s ease-in 0.3s forwards;
+  animation: sparks-opacity 0.3s ease-in 0.3s;
 }
 
 .sparks {
