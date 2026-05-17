@@ -82,7 +82,7 @@ button:focus-visible {
   padding: 15px 20px;
 }
 
-@media (max-width = 375px) {
+@media (max-width: 375px) {
   .save-button {
     flex-direction: column;
   }
@@ -95,8 +95,6 @@ button:focus-visible {
   flex-shrink: 0;
 }
 
-/*КОНОПКИ В ДИАЛОГОВОМ ОКНЕ*/
-/* Иконка дискеты */
 .ok-button__icon {
   width: var(--icon-w, 38px);
   height: var(--icon-h, 38px);
@@ -111,31 +109,24 @@ button:focus-visible {
   text-align: center;
 }
 
-/*СТИЛИ ДЛЯ МИКС БЛЕНД*/
-.save-button,
-.card__like-button,
-.ok-button {
+.common-button {
   isolation: isolate;
   transition: box-shadow 0.3s ease;
 }
 
-.save-button .button__text,
-.save-button .save-button__icon,
-.card__like-button .button__text,
-.ok-button .button__text {
+.common-button .button__text,
+.common-button .save-button__icon {
   position: relative;
   z-index: 2;
   color: var(--text-stroke-color, #ffffff);
   mix-blend-mode: difference;
 }
 
-.save-button .save-button__icon {
+.common-button .save-button__icon {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  color: var(--text-stroke-color, #ffffff);
   fill: var(--text-stroke-color, #ffffff);
-  mix-blend-mode: difference;
 }
 
 @media (min-width: 1440px) {

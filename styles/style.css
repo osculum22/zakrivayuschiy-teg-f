@@ -38,7 +38,7 @@
 }
 
 .text__pixel {
-  font-family: var(--accent-font), 'fantasy';
+  font-family: var(--accent-font), fantasy;
 }
 
 /*ЛОГОТИП*/
@@ -126,7 +126,7 @@
   z-index: 5;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font), 'fantasy';
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -214,7 +214,7 @@ dialog::backdrop {
 }
 
 .floppy__text {
-  font-family: var(--accent-font), 'fantasy';
+  font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-style: normal;
   font-size: var(--font-size-s, 14px);

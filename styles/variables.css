@@ -21,13 +21,13 @@
       transparent 4px
     ),
     linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
-  --container-width: clamp(280px, 100vw, 700px);
+  --container-width: clamp(280px, 100%, 700px);
   --header-logo-size: clamp(49px, 6vw, 65px);
   --header-text-size: clamp(14px, 1vw, 23px);
   --header-block-inset: clamp(122px, 20%, 130px);
   --header-inline-inset: clamp(16px, 2vw, 492.5px);
   --floppy-inline-size: clamp(341px, 50vw, 353px);
-  --dialog-width: clamp(calc(100%-17px), 50vw, calc(100%-543.5px));
+  --dialog-width: clamp(calc(100% - 17px), 50vw, calc(100%-543.5px));
 
   --text-stroke-color: #ffffff;
   --accent-color: #000000;
